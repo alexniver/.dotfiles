@@ -25,6 +25,7 @@ compinit
 alias c='clear'
 alias ls='ls --color=auto'
 alias ll='ls -la'
+alias la='ls -la'
 alias l.='ls -d .* --color=auto'
 
 # dirs

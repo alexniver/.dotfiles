@@ -9,6 +9,8 @@ require('impatient')
 vim.g.mapleader = ","
 vim.g.localleader = "\\"
 
+-- set clipboard+=unnamedplus
+
 -- IMPORTS
 require('vars') -- Variables
 require('opts') -- Options

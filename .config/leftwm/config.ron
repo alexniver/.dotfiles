@@ -47,8 +47,8 @@
     ],
     window_rules: [
         // windows whose window title is "Listen 1" will be spawned floating on tag 9
-        ( window_title: "Listen 1", spawn_on_tag: 9, spawn_floating: false ),
-        ( window_title: "New Tab - Google Chrome", spawn_on_tag: 5, spawn_floating: false ),
+        ( window_class: "listen1", spawn_on_tag: 9, spawn_floating: false ),
+        ( window_class: "google-chrome", spawn_on_tag: 5, spawn_floating: false ),
     ],
     disable_current_tag_swap: true,
     disable_tile_drag: false,
@@ -58,7 +58,7 @@
     sloppy_mouse_follows_focus: true,
     keybind: [
         (command: Execute, value: "dmenu_run", modifier: ["modkey"], key: "p"),
-        (command: Execute, value: "alacritty", modifier: ["modkey", "Shift"], key: "Return"),
+        (command: Execute, value: "alacritty", modifier: ["modkey"], key: "Return"),
         // chrome
         (command: Execute, value: "google-chrome-stable", modifier: ["modkey"], key: "b"),
         // music

@@ -32,11 +32,11 @@
         //EvenHorizontal,
         //EvenVertical,
         //Fibonacci,
+        Monocle,
         LeftMain,
         //CenterMain,
         //CenterMainBalanced,
         //CenterMainFluid,
-        Monocle,
         //RightWiderLeftStack,
         //LeftWiderRightStack,
     ],
@@ -47,7 +47,7 @@
     ],
     window_rules: [
         // windows whose window title is "Listen 1" will be spawned floating on tag 9
-        ( window_class: "listen1", spawn_on_tag: 9, spawn_floating: false ),
+        ( window_class: "netease-cloud-music-gtk4", spawn_on_tag: 9, spawn_floating: false ),
         ( window_class: "google-chrome", spawn_on_tag: 5, spawn_floating: false ),
     ],
     disable_current_tag_swap: true,
@@ -62,7 +62,7 @@
         // chrome
         (command: Execute, value: "google-chrome-stable", modifier: ["modkey"], key: "b"),
         // music
-        (command: Execute, value: "listen1", modifier: ["modkey"], key: "m"),
+        //(command: Execute, value: "netease-cloud-music-gtk4", modifier: ["modkey"], key: "m"),
 
 
         //(command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),

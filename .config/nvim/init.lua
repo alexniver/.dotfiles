@@ -6,8 +6,12 @@
 -- fast startup
 require('impatient')
 
-vim.g.mapleader = ","
-vim.g.localleader = "\\"
+vim.g.mapleader = ",";
+vim.g.localleader = "\\";
+
+-- last position
+vim.api.nvim_exec([[ autocmd BufRead * autocmd FileType <buffer> ++once
+      \ if &ft !~# 'commit\|rebase' && line("'\"") > 1 && line("'\"") <= line("$") | exe 'normal! g`"' | endif ]], false)
 
 -- set clipboard+=unnamedplus
 

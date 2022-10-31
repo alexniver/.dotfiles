@@ -93,8 +93,8 @@ require 'FTerm'.setup({
 -- null-ls for Vale, Selene and Markdown linters
 require("null-ls").setup({
     sources = {
-        require("null-ls").builtins.diagnostics.vale,
-        require("null-ls").builtins.diagnostics.selene,
+        -- require("null-ls").builtins.diagnostics.vale,
+        -- require("null-ls").builtins.diagnostics.selene,
         require("null-ls").builtins.diagnostics.markdownlint.with({
             diagnostics_format = "[#{c}] #{m} (#{s})",
             filter = function(diagnostic)
@@ -186,6 +186,12 @@ require('nvim-tree').setup {
     },
     git = {
         ignore = false,
+    },
+    -- actions.open_file.quit_on_open = true,
+    actions = {
+        open_file = {
+            quit_on_open=true,
+        },
     },
 }
 

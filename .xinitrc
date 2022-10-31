@@ -52,4 +52,4 @@ picom -f &
 
 ~/.fehbg &
 
-exec dwm
+exec leftwm 

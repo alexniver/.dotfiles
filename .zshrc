@@ -57,6 +57,12 @@ alias p='sudo pacman'
 # exec
 alias e='exec'
 
+# htop
+alias top='htop'
+
+# sudo rm
+alias srm = 'sudo rm'
+
 # nvim alias
 alias vi='nvim'
 alias ni='nvim'

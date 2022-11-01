@@ -25,15 +25,15 @@
     ],
     max_window_width: None,
     layouts: [
-        //MainAndVertStack,
-        //MainAndHorizontalStack,
-        //MainAndDeck,
-        //GridHorizontal,
-        //EvenHorizontal,
-        //EvenVertical,
-        //Fibonacci,
+        // MainAndVertStack,
+        // MainAndHorizontalStack,
+        // MainAndDeck,
+        // GridHorizontal,
+        // EvenHorizontal,
+        // EvenVertical,
+        // Fibonacci,
+        // LeftMain,
         Monocle,
-        LeftMain,
         //CenterMain,
         //CenterMainBalanced,
         //CenterMainFluid,
@@ -47,7 +47,7 @@
     ],
     window_rules: [
         // windows whose window title is "Listen 1" will be spawned floating on tag 9
-        ( window_class: "netease-cloud-music-gtk4", spawn_on_tag: 9, spawn_floating: false ),
+        // ( window_class: "netease-cloud-music-gtk4", spawn_on_tag: 9, spawn_floating: false ),
         ( window_class: "google-chrome", spawn_on_tag: 5, spawn_floating: false ),
     ],
     disable_current_tag_swap: true,
@@ -66,7 +66,7 @@
 
 
         //(command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
-        //(command: Execute, value: "slock", modifier: ["modkey", "Control"], key: "l"),
+        (command: Execute, value: "slock", modifier: ["modkey", "Control"], key: "l"),
 
         (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
@@ -74,7 +74,7 @@
         (command: SwapTags, value: "", modifier: ["modkey"], key: "w"),
         (command: MoveWindowUp, value: "", modifier: ["modkey", "Shift"], key: "k"),
         (command: MoveWindowDown, value: "", modifier: ["modkey", "Shift"], key: "j"),
-        (command: MoveWindowTop, value: "", modifier: ["modkey"], key: "Return"),
+        (command: MoveWindowTop, value: "", modifier: ["modkey", "Shift"], key: "t"),
         (command: FocusWindowUp, value: "", modifier: ["modkey"], key: "k"),
         (command: FocusWindowDown, value: "", modifier: ["modkey"], key: "j"),
         (command: NextLayout, value: "", modifier: ["modkey", "Control"], key: "k"),

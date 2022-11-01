@@ -85,7 +85,7 @@ require 'FTerm'.setup({
     blend      = 0,
     dimensions = {
         height = 0.9,
-        width = 0.9,
+        width = 0.65,
     },
 })
 
@@ -190,7 +190,7 @@ require('nvim-tree').setup {
     -- actions.open_file.quit_on_open = true,
     actions = {
         open_file = {
-            quit_on_open=true,
+            quit_on_open = true,
         },
     },
 }

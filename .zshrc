@@ -61,7 +61,7 @@ alias e='exec'
 alias top='htop'
 
 # sudo rm
-alias srm = 'sudo rm'
+alias srm='sudo rm'
 
 # nvim alias
 alias vi='nvim'

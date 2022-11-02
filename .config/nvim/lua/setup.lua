@@ -436,3 +436,8 @@ cmp.setup.cmdline(':', {
         { name = 'cmdline' }
     })
 })
+
+-- wgsl
+-- Recognize wgsl
+vim.api.nvim_exec([[ au BufNewFile,BufRead *.wgsl set filetype=wgsl ]], false)
+

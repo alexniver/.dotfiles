@@ -9,6 +9,9 @@ return require('packer').startup(function(use)
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
 
+    -- coc
+    use { 'neoclide/coc.nvim', branch = 'release' }
+
     -- theme
     use "EdenEast/nightfox.nvim"
 

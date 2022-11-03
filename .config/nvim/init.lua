@@ -9,6 +9,9 @@ require('impatient')
 vim.g.mapleader = ",";
 vim.g.localleader = "\\";
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- last position
 vim.api.nvim_exec([[ autocmd BufRead * autocmd FileType <buffer> ++once
       \ if &ft !~# 'commit\|rebase' && line("'\"") > 1 && line("'\"") <= line("$") | exe 'normal! g`"' | endif ]], false)

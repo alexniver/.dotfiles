@@ -21,7 +21,7 @@ require("symbols-outline").setup {
     position = 'right',
     relative_width = true,
     width = 25,
-    auto_close = false,
+    auto_close = true,
     show_numbers = false,
     show_relative_numbers = false,
     show_symbol_details = true,
@@ -156,6 +156,14 @@ require('trouble').setup {
 -- Nvim Tree Setup
 require('nvim-tree').setup {
     sort_by = "case_sensitive",
+    disable_netrw = true,
+    hijack_netrw = true,
+    open_on_setup_file = false,
+    update_focused_file = {
+        enable = true,
+        update_root = false,
+        ignore_list = {},
+    },
     view = {
         adaptive_size = false,
         mappings = {
@@ -440,4 +448,3 @@ cmp.setup.cmdline(':', {
 -- wgsl
 -- Recognize wgsl
 vim.api.nvim_exec([[ au BufNewFile,BufRead *.wgsl set filetype=wgsl ]], false)
-

@@ -88,6 +88,9 @@ map("n", "<leader>e", ":TroubleToggle<cr>")
 -- Nvim Tree
 map("n", "t", ":NvimTreeToggle<CR>")
 
+-- rnvimr
+map("n", "<leader>r", ":RnvimrToggle<CR>")
+
 -- Transparency
 map("n", "<leader>\\", ":TransparentToggle<CR>")
 
@@ -122,7 +125,7 @@ map('n', "<F7>", ":call vimspector#Evaluate()<cr>")
 
 -- LSP Navigation
 -- Code Actions
-map('n', "ca", ":lua vim.lsp.buf.code_action()<CR>")
+map('n', "fa", ":lua vim.lsp.buf.code_action()<CR>")
 vim.cmd([[
 nnoremap <silent> <c-]>     <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> <c-k>     <cmd>lua vim.lsp.buf.signature_help()<CR>

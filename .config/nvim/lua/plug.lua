@@ -95,6 +95,9 @@ return require('packer').startup(function(use)
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
 
+    -- ranger
+    use 'kevinhwang91/rnvimr'
+
     -- telescope
     use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', }
 

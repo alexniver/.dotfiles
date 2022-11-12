@@ -109,7 +109,6 @@ alias gcas='git commit -a -s'
 alias gcasm='git commit -a -s -m'
 alias gcb='git checkout -b'
 alias gcf='git config --list'
-alias gcm='git commit -m'
 
 function gccd() {
   command git clone --recurse-submodules "$@"

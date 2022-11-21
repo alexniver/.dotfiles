@@ -116,6 +116,7 @@
         (command: Execute, value: "pamixer --allow-boost -d 7", modifier: [], key: "XF86XK_AudioLowerVolume"),
         (command: Execute, value: "pamixer --allow-boost -i 7", modifier: [], key: "XF86XK_AudioRaiseVolume"),
 
+        // https://github.com/leftwm/lefthk/blob/main/lefthk-core/src/xkeysym_lookup.rs#L50
         (command: Execute, value: "mpc toggle", modifier: [], key: "XF86XK_AudioPlay"),
         (command: Execute, value: "mpc toggle", modifier: [], key: "XF86XK_AudioStop"),
         (command: Execute, value: "mpc prev", modifier: [], key: "XF86XK_AudioPrev"),

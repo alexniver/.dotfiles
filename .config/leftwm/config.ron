@@ -116,6 +116,11 @@
         (command: Execute, value: "pamixer --allow-boost -d 7", modifier: [], key: "XF86XK_AudioLowerVolume"),
         (command: Execute, value: "pamixer --allow-boost -i 7", modifier: [], key: "XF86XK_AudioRaiseVolume"),
 
+        (command: Execute, value: "mpc toggle", modifier: [], key: "XF86XK_AudioPlay"),
+        (command: Execute, value: "mpc toggle", modifier: [], key: "XF86XK_AudioStop"),
+        (command: Execute, value: "mpc prev", modifier: [], key: "XF86XK_AudioPrev"),
+        (command: Execute, value: "mpc next", modifier: [], key: "XF86XK_AudioNext"),
+
         // light
         (command: Execute, value: "brillo -q -U 7", modifier: [], key: "XF86XK_MonBrightnessDown"),
         (command: Execute, value: "brillo -q -A 7", modifier: [], key: "XF86XK_MonBrightnessUp"),

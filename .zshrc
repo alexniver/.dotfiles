@@ -18,6 +18,9 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/zhulin/.zshrc'
 
+# https://github.com/ohmyzsh/ohmyzsh/issues/31#issuecomment-359728582
+unsetopt nomatch
+
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall

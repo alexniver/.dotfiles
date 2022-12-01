@@ -159,6 +159,17 @@ require('nvim-tree').setup {
     disable_netrw = true,
     hijack_netrw = true,
     open_on_setup_file = false,
+    diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+        debounce_delay = 50,
+        icons = {
+            hint = "",
+            info = "",
+            warning = "",
+            error = "",
+        },
+    },
     update_focused_file = {
         enable = true,
         update_root = false,
@@ -219,7 +230,7 @@ vim.g.rnvimr_draw_border = 0
 vim.g.rnvimr_hide_gitignore = 1
 
 -- Change the border's color
-vim.g.rnvimr_border_attr = {fg= 14, bg= -1}
+vim.g.rnvimr_border_attr = { fg = 14, bg = -1 }
 
 -- Make Neovim wipe the buffers corresponding to the files deleted by Ranger
 vim.g.rnvimr_enable_bw = 1
@@ -228,7 +239,7 @@ vim.g.rnvimr_enable_bw = 1
 vim.g.rnvimr_shadow_winblend = 70
 
 -- Draw border with both
-vim.g.rnvimr_ranger_cmd = {'ranger', '--cmd=set draw_borders both'}
+vim.g.rnvimr_ranger_cmd = { 'ranger', '--cmd=set draw_borders both' }
 
 -- Link CursorLine into RnvimrNormal highlight in the Floating window
 vim.cmd('highlight link RnvimrNormal CursorLine')

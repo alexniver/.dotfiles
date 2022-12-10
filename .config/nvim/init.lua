@@ -4,7 +4,7 @@
 -- is called; otherwise, it will default to "\"
 
 -- fast startup
-require('impatient')
+-- require('impatient')
 
 vim.g.mapleader = ",";
 vim.g.localleader = "\\";

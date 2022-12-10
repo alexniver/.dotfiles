@@ -416,9 +416,9 @@ cmp.setup({
         ['<Tab>'] = cmp.mapping.select_next_item(),
         ['<C-S-f>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-j>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm { select = false }
+        ['<CR>'] = cmp.mapping.confirm { select = true }
     },
     -- Installed sources:
     sources = {

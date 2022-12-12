@@ -65,8 +65,6 @@
         //(command: Execute, value: "netease-cloud-music-gtk4", modifier: ["modkey"], key: "m"),
 
 
-        //(command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
-        (command: Execute, value: "slock", modifier: ["modkey", "Control"], key: "l"),
 
         (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
@@ -125,8 +123,13 @@
         (command: Execute, value: "mpc prev", modifier: [], key: "XF86XK_AudioPrev"),
         (command: Execute, value: "mpc next", modifier: [], key: "XF86XK_AudioNext"),
         (command: Execute, value: "mpc toggle", modifier: ["modkey"], key: "space"),
-        (command: Execute, value: "mpc prev", modifier: ["modkey"], key: "less"),
-        (command: Execute, value: "mpc next", modifier: ["modkey"], key: "greater"),
+        (command: Execute, value: "mpc prev", modifier: ["modkey"], key: "comma"),
+        (command: Execute, value: "mpc next", modifier: ["modkey"], key: "period"),
+
+        // lockscreen
+        (command: Execute, value: "slock", modifier: ["modkey", "Control"], key: "l"),
+        // suspend
+        (command: Execute, value: "systemctl suspend", modifier: ["modkey", "Control"], key: "s"),
 
         // light
         (command: Execute, value: "brillo -q -U 7", modifier: [], key: "XF86XK_MonBrightnessDown"),

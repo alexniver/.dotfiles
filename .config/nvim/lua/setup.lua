@@ -8,7 +8,13 @@ require("mason").setup({
         },
     }
 })
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({ ensure_installed = {
+    "sumneko_lua",
+    "html",
+    "marksman",
+    "tailwindcss",
+    "tsserver"
+} })
 
 -- theme nightfox
 vim.cmd("colorscheme nightfox")
@@ -283,7 +289,7 @@ require('Comment').setup({
 
 -- Treesitter Plugin Setup
 require('nvim-treesitter.configs').setup {
-    ensure_installed = { "lua", "rust", "toml" },
+    ensure_installed = { "lua", "rust", "toml", "html", "css", "javascript", "json", "tsx", "yaml" },
     auto_install = true,
     highlight = {
         enable = true,
@@ -304,7 +310,7 @@ rt.setup({
     server = {
         on_attach = function(_, bufnr)
             -- Hover actions
-            vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+            vim.keymap.set("n", "<C-h>", rt.hover_actions.hover_actions, { buffer = bufnr })
             -- Code action groups
             vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
         end,
@@ -383,6 +389,42 @@ require 'lspconfig'.texlab.setup {
 require 'lspconfig'.marksman.setup {
 }
 
+-- html
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+require 'lspconfig'.html.setup {
+    capabilities = capabilities,
+    cmd = { "vscode-html-language-server", "--stdio" },
+    filetypes = { "html" },
+    init_options = {
+        configurationSection = { "html", "css", "javascript" },
+        embeddedLanguages = {
+            css = true,
+            javascript = true
+        },
+        provideFormatter = true
+    },
+    settings = {},
+    single_file_support = true
+}
+
+-- typescript/javascript
+local protocol = require('vim.lsp.protocol')
+local on_attach = function(client, bufnr)
+    -- format on save
+    if client.server_capabilities.documentFormattingProvider then
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            group = vim.api.nvim_create_augroup("Format", { clear = true }),
+            buffer = bufnr,
+            callback = function() vim.lsp.buf.formatting_seq_sync() end
+        })
+    end
+end
+require 'lspconfig'.tsserver.setup {
+    on_attach = on_attach,
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+    cmd = { "typescript-language-server", "--stdio" }
+}
 
 
 
@@ -488,3 +530,49 @@ cmp.setup.cmdline(':', {
 -- wgsl
 -- Recognize wgsl
 vim.api.nvim_exec([[ au BufNewFile,BufRead *.wgsl set filetype=wgsl ]], false)
+
+-- auto close tag
+vim.cmd([[
+" filenames like *.xml, *.html, *.xhtml, ...
+" These are the file extensions where this plugin is enabled.
+"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
+" filetypes like xml, html, xhtml, ...
+" These are the file types where this plugin is enabled.
+"
+let g:closetag_filetypes = 'html,xhtml,phtml'
+
+" filetypes like xml, xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+
+" integer value [0|1]
+" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+"
+let g:closetag_emptyTags_caseSensitive = 1
+
+" dict
+" Disables auto-close if not in a "valid" region (based on filetype)
+"
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ 'typescriptreact': 'jsxRegion,tsxRegion',
+    \ 'javascriptreact': 'jsxRegion',
+    \ }
+
+" Shortcut for closing tags, default is '>'
+"
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+"
+let g:closetag_close_shortcut = '<leader>>'
+]])

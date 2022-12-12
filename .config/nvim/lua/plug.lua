@@ -158,4 +158,12 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-buffer'
     -- Snippet engine
     use 'hrsh7th/vim-vsnip'
+
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
+    -- html auto close tag
+    use 'alvan/vim-closetag'
 end)

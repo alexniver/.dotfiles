@@ -55,7 +55,7 @@ require('lspconfig').texlab.setup {
 }
 
 
-require 'lspconfig'.marksman.setup {}
+require('lspconfig').marksman.setup {}
 
 -- html
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -95,4 +95,3 @@ require 'lspconfig'.tsserver.setup {
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
     cmd = { "typescript-language-server", "--stdio" }
 }
-

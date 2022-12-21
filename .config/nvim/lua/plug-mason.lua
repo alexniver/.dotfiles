@@ -21,3 +21,6 @@ require("mason-lspconfig").setup({ ensure_installed = {
     "tailwindcss",
     "tsserver"
 } })
+
+
+map("n", "M", ":Mason<CR>")

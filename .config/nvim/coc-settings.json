@@ -1,8 +1,0 @@
-{
-    "languageserver": {
-        "wgsl": {
-          "command": "wgsl_analyzer", 
-          "filetypes": ["wgsl"]
-        }
-    }
-}

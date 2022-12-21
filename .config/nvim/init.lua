@@ -287,6 +287,10 @@ require('plug-mason')
 require('plug-null-ls')
 
 
+-- [[ prettier, for format code, need install 'npm install -g @fsouza/prettierd' ]]
+require('plug-prettier')
+
+
 -- [[ fidget, lsp progress ui ]]
 require('plug-fidget')
 

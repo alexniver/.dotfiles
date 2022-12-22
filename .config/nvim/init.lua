@@ -80,20 +80,52 @@ function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
--- Treesitter folding
--- Prevent all fold when opening
--- opt.foldmethod = 'expr'
--- opt.foldexpr = 'nvim_treesitter#foldexpr()'
--- vim.cmd([[autocmd BufReadPost,FileReadPost * normal zR]])
+-- Load all OPTs
+map("n", "<F10>", ":luafile ~/.config/nvim/lua/opts.lua<cr>")
 
--- fold settings -- GOOOD!!!!!!!
--- vim.wo.foldmethod = "expr"
--- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
--- vim.wo.foldtext =
---     [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) ]]
--- vim.wo.fillchars = "fold:\\"
--- vim.wo.foldnestmax = 3
--- vim.wo.foldminlines = 1
+
+-- Enable spell checking
+map("n", "<F11>", ":set spell!<cr>")
+-- zg to add word
+-- z= to correct error
+-- new words  added to ~/.config/nvim/spell/en.utf-8.add
+
+
+vim.cmd([[
+" " Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
+nnoremap  <leader>y  "+y
+nnoremap  <leader>yy  "+yy
+" " Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+]])
+
+-- Save and exit
+map("n", "<leader>w", ":w<CR>")
+map("n", "<leader>q", ":q<CR>")
+map("n", "<leader>qa", ":qa<CR>")
+
+-- Window navigation
+map("n", "<C-j>", "<C-w>j<C-w>")
+map("n", "<C-h>", "<C-w>h<C-w>")
+map("n", "<C-k>", "<C-w>k<C-w>")
+map("n", "<C-l>", "<C-w>l<C-w>")
+
+-- Toggle colored column at 81
+map('n', '<leader>|', ':execute "set colorcolumn=" . (&colorcolumn == "" ? "81" : "")<CR>')
+
+-- Navigate buffers
+map('n', '<leader>bp', ':bprevious<CR>', {})
+map('n', '<leader>bn', ':bnext<CR>', {})
+map('n', '<leader>bf', ':bfirst<CR>', {})
+map('n', '<leader>bl', ':blast<CR>', {})
+map('n', '<leader>bd', ':bdelete<CR>', {})
+
+
 
 -- [[ Format on Save ]]
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]

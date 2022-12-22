@@ -1,1 +1,1 @@
-map('n', "<leader>b", ":TagbarToggle<CR>");
+--map('n', "<leader>b", ":TagbarToggle<CR>");

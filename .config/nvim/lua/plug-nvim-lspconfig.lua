@@ -63,7 +63,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 require 'lspconfig'.html.setup {
     capabilities = capabilities,
     cmd = { "vscode-html-language-server", "--stdio" },
-    filetypes = { "html" },
+    filetypes = { "html", "javascriptreact", "javascript.jsx", "typescriptreact", "typescript.tsx" },
     init_options = {
         configurationSection = { "html", "css", "javascript" },
         embeddedLanguages = {
@@ -95,3 +95,7 @@ require 'lspconfig'.tsserver.setup {
     filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
     cmd = { "typescript-language-server", "--stdio" }
 }
+
+-- tailwind css
+local nvim_lsp = require "lspconfig"
+nvim_lsp.tailwindcss.setup {}

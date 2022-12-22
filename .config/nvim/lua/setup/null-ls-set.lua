@@ -1,7 +1,3 @@
-require('packer').startup(function(use)
-    use 'jose-elias-alvarez/null-ls.nvim'
-end)
-
 local null_ls = require("null-ls")
 null_ls.setup({
     sources = {

@@ -1,8 +1,3 @@
-require('packer').startup(function(use)
-    use 'numToStr/Comment.nvim'
-end)
-
-
 require('Comment').setup({
     mappings = {
         basic = false,

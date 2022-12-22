@@ -1,11 +1,3 @@
-require('packer').startup(function(use)
-    use {
-        "folke/trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
-    }
-end)
-
-
 -- Trouble Setup
 require('trouble').setup {
     position = "right",

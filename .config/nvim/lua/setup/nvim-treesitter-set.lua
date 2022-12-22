@@ -1,8 +1,3 @@
-require('packer').startup(function(use)
-    use 'nvim-treesitter/nvim-treesitter'
-end)
-
-
 -- Treesitter Plugin Setup
 require('nvim-treesitter.configs').setup {
     ensure_installed = { "lua", "rust", "toml", "html", "css", "javascript", "json", "tsx", "yaml" },
@@ -18,4 +13,3 @@ require('nvim-treesitter.configs').setup {
         max_file_lines = nil,
     }
 }
-

@@ -1,7 +1,3 @@
-require('packer').startup(function(use)
-    use 'MunifTanjim/prettier.nvim'
-end)
-
 local null_ls = require("null-ls")
 null_ls.setup({
     sources = {

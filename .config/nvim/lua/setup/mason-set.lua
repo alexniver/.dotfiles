@@ -1,10 +1,3 @@
-require('packer').startup(function(use)
-    -- mason
-    use 'williamboman/mason.nvim'
-    use 'williamboman/mason-lspconfig.nvim'
-end)
-
-
 require("mason").setup({
     ui = {
         icons = {

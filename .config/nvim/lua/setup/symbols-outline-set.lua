@@ -1,8 +1,3 @@
-require('packer').startup(function(use)
-    use 'simrat39/symbols-outline.nvim'
-end)
-
-
 -- symbols-outline setup
 require("symbols-outline").setup {
     highlight_hovered_item = true,

@@ -1,8 +1,3 @@
-require('packer').startup(function(use)
-    use 'neovim/nvim-lspconfig'
-end)
-
-
 require('lspconfig').sumneko_lua.setup {
     settings = {
         Lua = {

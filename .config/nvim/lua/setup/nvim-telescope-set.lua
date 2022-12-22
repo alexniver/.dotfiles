@@ -1,23 +1,3 @@
-require('packer').startup(function(use)
-    use 'nvim-lua/plenary.nvim'
-
-    use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', }
-
-    use 'nvim-telescope/telescope-file-browser.nvim'
-
-    -- telescope media files
-    use 'nvim-telescope/telescope-media-files.nvim'
-
-    -- fzf
-    use 'junegunn/fzf.vim'
-
-    -- telescope fzf
-    use { 'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-
-end)
-
-
 require('telescope').setup {
     defaults = {
         file_ignore_patterns = {

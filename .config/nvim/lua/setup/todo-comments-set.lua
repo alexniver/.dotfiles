@@ -1,11 +1,3 @@
-require('packer').startup(function(use)
-    use {
-        "folke/todo-comments.nvim",
-        requires = "nvim-lua/plenary.nvim",
-    }
-end)
-    
-
 require('todo-comments').setup {
     colors = {
         error = { "DiagnosticError", "ErrorMsg", "#de5d68" },

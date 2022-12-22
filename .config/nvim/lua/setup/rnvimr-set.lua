@@ -1,8 +1,3 @@
-require('packer').startup(function(use)
-    use 'kevinhwang91/rnvimr'
-end)
-
-
 -- rnvimr
 vim.g.rnvimr_enable_ex = 1
 

@@ -195,127 +195,73 @@ nnoremap <silent> gw        <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 
 ------------------------------------------[[ Plugins ]]-------------------------------------------------
 
--- [[ impatient, fast startup ]]
-require('plug-impatient')
+require('plugin')
+
+local plug_list = {
+    -- [[ impatient, fast startup ]]
+    "impatient",
+    -- [[ theme, nightfox ]]
+    "nightfox",
+    -- [[ FTerm, a easy use term ]]
+    "fterm",
+    -- [[ symbols-outline, func list treelike view ]]
+    "symbols-outline",
+    -- [[ headlines, adds highlights for text filetypes ]]
+    "headlines",
+    -- [[ lualine, statusline ]]
+    "lualine",
+    -- [[ nvim tree ]]
+    "nvim-tree",
+    -- [[ tagbar, need install 'ctags' ]]
+    "tagbar",
+    -- [[ hop, jump anywhere in a document with as few keystrokes as possible ]]
+    "hop",
+    --[[ nvim-treesitter, highlight for all language ]]
+    "nvim-treesitter",
+    -- [[ todo-comments, highlight and search for todo comments like TODO, HACK, BUG ]]
+    "todo-comments",
+    -- [[ trouble, A pretty list for showing diagnostics, references, telescope results, quickfix and location lists. ]]
+    "trouble",
+    -- [[ telescope, fzf, telescope-fzf-native, telescope-media-files ]]
+    "nvim-telescope",
+    -- [[ rnvimr, Ranger plugin for nvim, need install ranger ]]
+    "rnvimr",
+    -- [[ auto pair, auto pair ts tag ]]
+    "autopairs",
+    -- [[ Comment, quick comment ]]
+    "comment",
+    -- [[ nvim auto complete for lsp ]]
+    "nvim-cmp",
+    -- [[ indent-blankline, adds indentation guides to all lines (including empty lines). ]]
+    "indent-blankline",
+    -- [[ vim-surround, parentheses, brackets, quotes, XML tags refactor. ]]
+    "vim-surround",
+    -- [[ nvim-colorizer, show color for color, white: #ffffff ]]
+    "nvim-colorizer",
+    -- [[ nvim-lspconfig ]]
+    "nvim-lspconfig",
+    -- [[ mason, LSP manager ]]
+    "mason",
+    -- [[ null-ls, inject LSP diagnostics ]]
+    "null-ls",
+    -- [[ prettier, for format code, need install 'npm install -g @fsouza/prettierd' ]]
+    "prettier",
+    -- [[ fidget, lsp progress ui ]]
+    "fidget",
+    -- [[ vim-illuminate ]]
+    -- [[ automatically highlighting other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching. ]]
+    "vim-illuminate",
+    -- [[ hlargs.nvim ]]
+    -- [[ Highlight arguments' definitions and usages, asynchronously, using Treesitter ]]
+    "hlargs",
+    -- [[ git ]]
+    "git",
+    -- [[ rust ]]
+    "rust",
+}
 
 
--- [[ theme, nightfox ]]
-require('plug-nightfox')
 
-
--- [[ FTerm, a easy use term ]]
-require('plug-fterm')
-
-
--- [[ symbols-outline, func list treelike view ]]
-require('plug-symbols-outline')
-
-
--- [[ headlines, adds highlights for text filetypes ]]
-require('plug-headlines')
-
-
--- [[ lualine, statusline ]]
-require('plug-lualine')
-
-
--- [[ nvim tree ]]
-require('plug-nvim-tree')
-
-
--- [[ tagbar, need install 'ctags' ]]
-require('plug-tagbar')
-
-
--- [[ hop, jump anywhere in a document with as few keystrokes as possible ]]
-require('plug-hop')
-
-
---[[ nvim-treesitter, highlight for all language ]]
-require('plug-nvim-treesitter')
-
-
--- [[ todo-comments, highlight and search for todo comments like TODO, HACK, BUG ]]
-require('plug-todo-comments')
-
-
--- [[ trouble, A pretty list for showing diagnostics, references, telescope results, quickfix and location lists. ]]
-require('plug-trouble')
-
-
--- [[ telescope, fzf, telescope-fzf-native, telescope-media-files ]]
-require('plug-nvim-telescope')
-
-
--- [[ rnvimr, Ranger plugin for nvim, need install ranger ]]
-require('plug-rnvimr')
-
-
--- [[ auto pair, auto pair ts tag ]]
-require('plug-autopairs')
-
-
--- [[ Comment, quick comment ]]
-require('plug-comment')
-
-
--- [[ nvim auto complete for lsp ]]
-require('plug-nvim-cmp')
-
-
--- [[ indent-blankline, adds indentation guides to all lines (including empty lines). ]]
-require('plug-indent-blankline')
-
-
--- [[ vim-surround, parentheses, brackets, quotes, XML tags refactor. ]]
-require('plug-vim-surround')
-
-
--- [[ nvim-colorizer, show color for color, white: #ffffff ]]
-require('plug-nvim-colorizer')
-
-
--- [[ nvim-lspconfig ]]
-require('plug-nvim-lspconfig')
-
-
--- [[ mason, LSP manager ]]
-require('plug-mason')
-
-
--- [[ null-ls, inject LSP diagnostics ]]
-require('plug-null-ls')
-
-
--- [[ prettier, for format code, need install 'npm install -g @fsouza/prettierd' ]]
-require('plug-prettier')
-
-
--- [[ fidget, lsp progress ui ]]
-require('plug-fidget')
-
-
--- [[ vim-illuminate ]]
--- [[ automatically highlighting other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching. ]]
-require('plug-vim-illuminate')
-
-
--- [[ hlargs.nvim ]]
--- [[ Highlight arguments' definitions and usages, asynchronously, using Treesitter ]]
-require('plug-hlargs')
-
-
--- [[ lspkind, adds vscode-like pictograms to neovim built-in lsp ]]
-require('plug-lspkind')
-
-
--- [[ git ]]
-require('plug-git')
-
-
--- [[ rust ]]
-require('plug-rust')
-
-
--- [[ react ]]
-require('plug-react')
+for _, v in ipairs(plug_list) do
+    require("setup." .. v .. "-set")
+end

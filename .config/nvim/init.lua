@@ -29,6 +29,8 @@ set shiftwidth=4
 set expandtab
 set smartindent
 ]])
+vim.api.nvim_exec([[ autocmd BufRead,BufNewFile *.htm,*.html,*.jsx,*.tsx,*.js,*.ts setlocal tabstop=2 shiftwidth=2 softtabstop=2 ]], false)
+
 
 -- [[ Spell check ]]
 vim.cmd([[

@@ -134,6 +134,9 @@
         // light
         (command: Execute, value: "brillo -q -U 7", modifier: [], key: "XF86XK_MonBrightnessDown"),
         (command: Execute, value: "brillo -q -A 7", modifier: [], key: "XF86XK_MonBrightnessUp"),
+
+        // flameshot
+        (command: Execute, value: "flameshot gui", modifier: ["modkey", "Shift"], key: "f"),
     ],
     state_path: None,
 )

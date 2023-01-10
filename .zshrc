@@ -375,6 +375,10 @@ alias pc='proxychains'
 # ranger
 alias rr='ranger'
 
+# tmux
+alias tmux='tmux new /usr/bin/zsh'
+
+
 # autojump
 [[ -s /etc/profile.d/autojump.zsh ]] && source /etc/profile.d/autojump.zsh
 
@@ -390,3 +394,7 @@ alias rr='ranger'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# append
+path+=('/home/zhulin/.cargo/bin')
+# export to sub-processes (make it inherited by child processes)
+export PATH

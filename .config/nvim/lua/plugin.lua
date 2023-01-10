@@ -60,7 +60,7 @@ require('packer').startup(function(use)
     ------------------[[ nvim-treesitter ]]---------------------------------------------
     use 'nvim-treesitter/nvim-treesitter'
 
-    
+
     ------------------[[ todo-comments ]]-----------------------------------------------
     use {
         "folke/todo-comments.nvim",
@@ -90,8 +90,8 @@ require('packer').startup(function(use)
 
     -- telescope fzf
     use { 'nvim-telescope/telescope-fzf-native.nvim',
-            run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-            
+        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+
 
     ------------------[[ telescope ]]---------------------------------------------------
     use 'kevinhwang91/rnvimr'
@@ -178,7 +178,8 @@ require('packer').startup(function(use)
 
 
     ------------------[[ rust ]]----------------------------------------------------
-    use 'simrat39/rust-tools.nvim'
+    -- use 'simrat39/rust-tools.nvim'
+    use 'kdarkhan/rust-tools.nvim'
     use {
         'saecki/crates.nvim',
         tag = 'v0.3.0',

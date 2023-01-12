@@ -376,7 +376,10 @@ alias pc='proxychains'
 alias rr='ranger'
 
 # tmux
-alias tmux='tmux new /usr/bin/zsh'
+alias tx='tmux'
+
+# ncmpcpp
+alias ncp='ncmpcpp'
 
 
 # autojump
